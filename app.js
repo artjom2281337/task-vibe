@@ -79,11 +79,8 @@ app.use("/auth", authRouter);
 
 // Home page
 app.get("/", (req, res) => {
-    if (res.locals.user) { // User logged in -> dashboard
-        res.redirect("/dashboard");
-    } else { // User is not logged in -> login page
-        res.redirect("/auth/login");
-    }
+    // Public entrypoint for applicants
+    res.redirect("/apply");
 });
 
 
